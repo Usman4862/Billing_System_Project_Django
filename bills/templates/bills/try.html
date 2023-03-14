@@ -1,0 +1,41 @@
+{% for p in products %}
+<tr>
+<td>{{ p.product_name }}</td>
+<td><input type="number" min="0" name="quantity1" value="0"></td>
+<td><center>{{ p.product_price }}</center></td>
+</tr>
+{% endfor %}
+
+
+max="{{ inventory.item_present.filter(product.product_name == p.product_name)}}"
+
+
+
+bills.html
+<center><h1>Name:{{ name }}</h1>
+<h2>Mob.No:{{ mobilenumber }}</h2>
+<table>
+{% if quatity1 %}
+    <tr><td>Vanila:</td><td>{{ v_amount }}</td> <td>{{ quatity1 }}</td></tr>
+{% endif %}
+{% if quatity2 %}
+    <tr><td>Butterscotch:</td><td>{{ b_amount }}</td> <td>{{ quatity2 }}</td></tr>
+{% endif %}
+{% if quatity3 %}
+    <tr><td>Chocolate:</td><td>{{ c_amount }}</td> <td>{{ quatity3 }}</td></tr>
+{% endif %}
+{% if quatity4 %}
+    <tr><td>Strawberry:</td><td>{{ s_amount }}</td> <td>{{ quatity4 }}</td></tr>
+{% endif %}
+{% if quatity5 %}
+    <tr><td>Mango:</td><td>{{ m_amount }}</td> <td>{{ quatity5 }}</td></tr>
+{% endif %}
+<tr><td>Total</td><td colspan="2">{{ total }}</td></tr>
+</table>
+<button onclick="myFunction()">Print this page</button>
+</center>
+<script>
+function myFunction() {
+    window.print();
+}
+</script>

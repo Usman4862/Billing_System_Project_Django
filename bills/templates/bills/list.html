@@ -1,0 +1,20 @@
+<form method='POST' action="{% url 'bill:db_entry' %}">
+		{% csrf_token %}
+    <input type="hidden" name="name" value="{{ Name }}">
+	<input type="hidden" name="mobilenumber" value="{{ mobilenumber }}">
+    <table>
+        <tr>
+            <th>Items-Name</th>&nbsp
+            <th><center>Quantity</center></th>&nbsp
+            <th><center>Price[Per_units]</center></th>
+        </tr>
+        {% for p in products %}
+            <tr>
+            <td>{{ p.product_name }}</td>&nbsp
+            <td><input type="number" min="0" name="{% {} %}" value="0"></td>&nbsp
+            <td><center>{{ p.product_price }}</center></td>
+            </tr>
+        {% endfor %}                            
+    </table>
+		<br><button type="submit" class="btn btn-primary">Submit</button>
+</form>
